@@ -1,7 +1,12 @@
 # Public Billposting Booking System
 
 ## Project overview
-This repository contains a public billposting booking system built on Camunda BPM embedded in a Spring Boot application. The process is modeled in BPMN and orchestrates REST and SOAP services to select zones, handle confirmations or cancellations, and persist confirmed orders.
+This repository contains a public billposting booking system built on the Camunda BPM engine embedded in a Spring Boot application. Camunda is the central orchestration layer: it starts and correlates process instances, coordinates REST and SOAP calls, and drives the confirmation or cancellation flow while persisting confirmed orders.
+
+## Camunda process model
+The BPMN model that drives the flow lives in `camundaEngine/camundaApi/src/main/resources/processes` and is deployed automatically by Camunda at startup.
+
+![Camunda process model](docs/mainStart.png)
 
 ## Repository structure
 - `camundaEngine/camundaApi`: Spring Boot + Camunda application (main service).
@@ -56,7 +61,7 @@ Networking note: from inside containers use service names and ports, e.g. `http:
 ## API endpoints
 
 ### POST /api/booking/request
-Starts the booking process.
+Starts a Camunda process instance by message and returns process output plus the business key used for later correlation.
 
 Request:
 ```json
@@ -83,7 +88,7 @@ Response:
 ```
 
 ### POST /api/booking/decision
-Confirms or cancels a booking.
+Correlates a message to the waiting Camunda instance using the business key and finalizes the process.
 
 Request:
 ```json
@@ -107,13 +112,13 @@ Response:
 ### GET /api/booking/history
 Returns a list of historic process instances and variables.
 
-## Process workflow
-1. Receive a booking request.
+## Process workflow (Camunda-driven)
+1. Receive a booking request and start a Camunda process instance by message.
 2. Fetch user data from `user-service` and zones from `zones-service`.
 3. Select zones by algorithm and budget.
-4. Submit posting request to `posting-service` (SOAP).
-5. Return selected zones, request ID, and business key.
-6. Await user decision and finalize or cancel the posting.
+4. Submit the posting request to `posting-service` (SOAP).
+5. Return selected zones, request ID, and the business key for correlation.
+6. Wait for a decision message and finalize or cancel the posting.
 
 ## File persistence
 Confirmed orders are stored in `persistent_data/` (mounted by Docker). A consolidated `posting_requests.txt` may be written depending on process logic.

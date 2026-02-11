@@ -1,0 +1,21 @@
+=== DATI CLIENTE ===
+Nome: sarabianchi
+Cognome: Bianchi
+Username: sarabianchi
+Codice Fiscale: BNCSRA90A41A994F
+Email: sarabianchi@email.it
+Telefono: +39 06 000 555
+Indirizzo: Corso Francia 68
+Città: Roma
+CAP: 4200
+
+=== DETTAGLI ORDINE ===
+Business Key: a64965ec-6866-40e5-9eac-087a70f4118d
+Request ID: JZKNDxlh4L
+Numero Fattura: 2871080611
+Formato Poster: 50x70
+Importo Dovuto: 253.70001
+Totale Calcolato: 253.7
+
+Zone selezionate:
+{"L'Aquila":[{"id":2,"name":"Pile","city":"L'Aquila","price":9.2},{"id":4,"name":"Pettino","city":"L'Aquila","price":9.9},{"id":3,"name":"Coppito","city":"L'Aquila","price":10.4},{"id":1,"name":"Center","city":"L'Aquila","price":12.0},{"id":6,"name":"Flaminio","city":"L'Aquila","price":19.9}],"Rome":[{"id":10,"name":"Testaccio","city":"Rome","price":16.0},{"id":8,"name":"Parioli","city":"Rome","price":18.5},{"id":9,"name":"Trastevere","city":"Rome","price":29.9},{"id":7,"name":"EUR","city":"Rome","price":38.0},{"id":5,"name":"Center","city":"Rome","price":89.9}]}

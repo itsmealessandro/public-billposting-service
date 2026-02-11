@@ -1,0 +1,21 @@
+=== DATI CLIENTE ===
+Nome: mariorossi
+Cognome: Rossi
+Username: mariorossi
+Codice Fiscale: RSSMRA90A01E897Z
+Email: mariorossi@email.it
+Telefono: +39 0862 000 555
+Indirizzo: Viale Gran Sasso 1
+Città: L'Aquila
+CAP: 67100
+
+=== DETTAGLI ORDINE ===
+Business Key: 9e795786-3a13-42a0-a171-15aa7a970b9e
+Request ID: u5Zyipotft
+Numero Fattura: 9412728011
+Formato Poster: 50x70
+Importo Dovuto: 61.399998
+Totale Calcolato: 61.4
+
+Zone selezionate:
+{"L'Aquila":[{"id":6,"name":"Flaminio","city":"L'Aquila","price":19.9},{"id":1,"name":"Center","city":"L'Aquila","price":12.0},{"id":3,"name":"Coppito","city":"L'Aquila","price":10.4},{"id":4,"name":"Pettino","city":"L'Aquila","price":9.9},{"id":2,"name":"Pile","city":"L'Aquila","price":9.2}]}
